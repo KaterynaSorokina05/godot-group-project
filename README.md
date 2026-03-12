@@ -1,4 +1,3 @@
-# godot-group-project
 ### 🎮 Game
 ## 📝 Про проєкт
 
