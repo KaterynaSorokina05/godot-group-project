@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="the-rust-depo"
-run/main_scene="uid://by40lal0y7eyi"
+run/main_scene="uid://cms4xkx18di12"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,11 +19,13 @@ config/icon="res://icon.svg"
 
 Global="*uid://dyjkindec6tla"
 Transition="*uid://bxovre6id4poc"
+SettingsUI="*uid://btppctvjjfudf"
+DialogueManager="*uid://dy08uevfibb6a"
 
 [display]
 
 window/size/viewport_height=592
-window/size/window_width_override=1920
+window/size/window_width_override=1910
 window/size/window_height_override=1000
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"

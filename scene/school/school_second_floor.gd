@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.save_game(scene_file_path)
 	pass # Replace with function body.
 
 

@@ -3,10 +3,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Эта функция срабатывает в самую первую секунду при загрузке сцены
-	# Проверяем, сохраняли ли мы позицию в Глобал (если она не равна нулю)
+	Global.save_game(scene_file_path)
 	if Global.floor_1_position != Vector2.ZERO:
-		# Если сохраняли, ставим героя на это самое сохраненное место!
+		
 		$main_hero.global_position = Global.floor_1_position
 
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vj1qj7k5lywq"
-path="res://.godot/imported/charactersBtn.png-b77f9a8e11fd37519f6dddb5790fb08c.ctex"
+uid="uid://dq1p0osq1l34q"
+path="res://.godot/imported/melodyOFF.png-3d797468e42627cb2016f4599ce235d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MainMenu/charactersBtn.png"
-dest_files=["res://.godot/imported/charactersBtn.png-b77f9a8e11fd37519f6dddb5790fb08c.ctex"]
+source_file="res://assets/Buttons/Settings/melodyOFF.png"
+dest_files=["res://.godot/imported/melodyOFF.png-3d797468e42627cb2016f4599ce235d6.ctex"]
 
 [params]
 

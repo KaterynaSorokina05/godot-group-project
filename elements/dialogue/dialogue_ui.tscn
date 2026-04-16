@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dy08uevfibb6a"]
+
+[ext_resource type="Texture2D" uid="uid://4rpnyxohcmup" path="res://elements/dialogue/dialogue_field.png" id="1_3i20q"]
+[ext_resource type="Script" uid="uid://nxxxwrbgj5ly" path="res://elements/dialogue/dialogue_ui.gd" id="1_cdl30"]
+[ext_resource type="FontFile" uid="uid://cotum4p2i2i6c" path="res://elements/dialogue/Neucha.ttf" id="2_cdl30"]
+
+[node name="DialogueUI" type="CanvasLayer" unique_id=1583076658]
+script = ExtResource("1_cdl30")
+
+[node name="DialogueBox" type="TextureRect" parent="." unique_id=21765234]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -171.0
+offset_right = 250.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+texture = ExtResource("1_3i20q")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextLabel" type="Label" parent="DialogueBox" unique_id=43558386]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 36.0
+offset_right = 458.0
+offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("2_cdl30")
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 2
+
+[node name="NextButton" type="TextureButton" parent="DialogueBox" unique_id=1743875271]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 109.0
+offset_right = 470.0
+offset_bottom = 149.0
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]

@@ -1,24 +1,24 @@
 extends Area2D
 
 @export_file("*.tscn") var next_level_path: String
-var is_player_near = false # Флаг: стоит ли герой у двери прямо сейчас?
+var is_player_near = false 
 
 func _ready():
-	# Подключаем слежку за входом и ВЫХОДОМ из зоны
+	
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
 	if body.name == "MainHero":
-		is_player_near = true # Герой подошел к двери!
+		is_player_near = true 
 
 func _on_body_exited(body):
 	if body.name == "MainHero":
-		is_player_near = false # Герой ушел от двери!
+		is_player_near = false 
 
-# Эта функция крутится каждый кадр игры
+
 func _process(delta):
-	# Если герой рядом И нажата кнопка Enter (в Godot это действие называется "ui_accept")
+	
 	if is_player_near and Input.is_action_just_pressed("ui_accept"):
 		change_level()
 
