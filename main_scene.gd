@@ -39,3 +39,7 @@ func _on_continue_btn_pressed() -> void:
 
 func _on_exit_btn_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_characters_btn_pressed() -> void:
+	Transition.change_scene("res://Images/characters/characters.tscn")

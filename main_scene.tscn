@@ -77,4 +77,5 @@ stretch_mode = 5
 
 [connection signal="pressed" from="MainMenuBackg/MarginContainer/VBoxContainer/newGameBtn" to="." method="_on_new_game_btn_pressed"]
 [connection signal="pressed" from="MainMenuBackg/MarginContainer/VBoxContainer/continueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="MainMenuBackg/MarginContainer/VBoxContainer/charactersBtn" to="." method="_on_characters_btn_pressed"]
 [connection signal="pressed" from="MainMenuBackg/MarginContainer/VBoxContainer/exitBtn" to="." method="_on_exit_btn_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0c5ne21niafw"
-path="res://.godot/imported/mainMenuBackg.png-6d5bb0735c81d7a59bf8822f659a8510.ctex"
+uid="uid://q26jq84s424"
+path="res://.godot/imported/fire.png-2a808cb10d7367ad6e00e3387d44dab3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MainMenu/mainMenuBackg.png"
-dest_files=["res://.godot/imported/mainMenuBackg.png-6d5bb0735c81d7a59bf8822f659a8510.ctex"]
+source_file="res://scene/forest/fire.png"
+dest_files=["res://.godot/imported/fire.png-2a808cb10d7367ad6e00e3387d44dab3.ctex"]
 
 [params]
 

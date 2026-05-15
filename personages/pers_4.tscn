@@ -34,7 +34,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"talk_left",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -45,7 +45,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"talk_right",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6x7kw"]
@@ -56,9 +56,10 @@ size = Vector2(9.666666, 26.500002)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=316664844]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_642bg")
-animation = &"default_right"
+animation = &"default_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592896005]
+visible = false
 position = Vector2(34.999996, 95)
 scale = Vector2(12, 12)
 shape = SubResource("RectangleShape2D_6x7kw")

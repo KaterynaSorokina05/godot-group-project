@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0c5ne21niafw"
-path="res://.godot/imported/mainMenuBackg.png-6d5bb0735c81d7a59bf8822f659a8510.ctex"
+uid="uid://bpn6uy3t44vgr"
+path="res://.godot/imported/Lolita_Murphy.png-8705cd7bf9ce93ce162886b65020eeaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MainMenu/mainMenuBackg.png"
-dest_files=["res://.godot/imported/mainMenuBackg.png-6d5bb0735c81d7a59bf8822f659a8510.ctex"]
+source_file="res://Images/characters/Lolita_Murphy.png"
+dest_files=["res://.godot/imported/Lolita_Murphy.png-8705cd7bf9ce93ce162886b65020eeaa.ctex"]
 
 [params]
 

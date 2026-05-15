@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0c5ne21niafw"
-path="res://.godot/imported/mainMenuBackg.png-6d5bb0735c81d7a59bf8822f659a8510.ctex"
+uid="uid://cvwncs7pq4w5n"
+path="res://.godot/imported/Rory_Li.png-d4f09b15113d0e66bcd73ab2952b1afc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MainMenu/mainMenuBackg.png"
-dest_files=["res://.godot/imported/mainMenuBackg.png-6d5bb0735c81d7a59bf8822f659a8510.ctex"]
+source_file="res://Images/characters/Rory_Li.png"
+dest_files=["res://.godot/imported/Rory_Li.png-d4f09b15113d0e66bcd73ab2952b1afc.ctex"]
 
 [params]
 

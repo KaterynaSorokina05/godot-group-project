@@ -1,33 +1,69 @@
 extends Node2D
 
 func _ready():
+	$BonfireAnimation.play("default")
 	Global.save_game(scene_file_path)
-	# 1. Чекаємо рівно 5 секунд після запуску сцени
-	await get_tree().create_timer(5.0, false).timeout
+	await get_tree().create_timer(3.0, false).timeout
 	
-	# === ГОВОРИТЬ ПЕРС 2 ===
-	DialogueManager.show_text("Привіт!")
-	$MouthAnimationpers2.visible = true
-	$MouthAnimationpers2.play("default")
+	# === ВЕЛИКИЙ ДІАЛОГ БІЛЯ ВОГНИЩА ===
 	
-	# ЧЕКАЄМО, ПОКИ ГРАВЕЦЬ НЕ НАТИСНЕ ШЕСТЕРІНКУ!
-	await DialogueManager.next_clicked 
+	# Викликаємо нашу нову зручну функцію (вона написана нижче)
+	# null означає, що у Браянта (ГГ) немає анімації рота на сцені, або ми її не показуємо
+	await play_line("БРАЯНТ", "Ну... я просто вирішив, що буде краще взагалі не звертати на нього уваги. Робити вигляд, що його не існує.", null)
 	
-	$MouthAnimationpers2.stop()
-	$MouthAnimationpers2.visible = false
+	await play_line("РОРІ", "Мейсон уже всіх дістав. Реально. Постійно задирає всіх підряд, на рівному місці. Раніше хоч межі знав, а тепер взагалі дах знесло.", $MouthAnimationpers2)
 	
-	# (Маленьку паузу між фразами можна залишити)
-	await get_tree().create_timer(0.5, false).timeout 
+	await play_line("ГРЕЙС", "Ну а що ти хотів? Він же вважає, що статус його батька і ці дурні гроші захистять його від будь-якої відповідальності. Він недоторканний.", $MouthAnimationpers3)
 	
-	# === ГОВОРИТЬ ПЕРС 3 ===
-	DialogueManager.show_text("Як у тебе справи?")
-	$MouthAnimationpers3.visible = true
-	$MouthAnimationpers3.play("default")
+	await play_line("ЛОЛІТА", "Він просто бридкий і нікчемний. Брайан, мені так шкода, що сталась ця ситуація. Ти ж йому нічого не зробив... Завтра ми обов'язково постараємось щось придумати.", $MouthAnimationpers4)
 	
-	# ЗНОВУ ЧЕКАЄМО КЛІКА!
-	await DialogueManager.next_clicked
+	await play_line("БРАЯНТ", "Дякую, Лоліта. Та все нормально. Не те щоб у мене зараз дуже боліла нога... Але трохи є. Наступати неприємно.", null)
 	
-	$MouthAnimationpers3.stop()
-	$MouthAnimationpers3.visible = false
+	await play_line("МЕТЬЮ", "Ну і що ви йому зробите? Га? Підійдете і скажете: «Мейсон, так робити некрасиво»? Він же як завжди вийде сухим із води. Ми для нього порожнє місце.", $MouthAnimationpers5)
+	
+	await play_line("ГРЕЙС", "Думаю, завтра щось придумаємо з цим. Колективна скарга, або поговоримо зі старшими. Але це буде завтра. На сьогодні з нас досить проблем.", $MouthAnimationpers3)
+	
+	# --- ПАУЗА ТА ЗВУК ---
+	DialogueManager.hide_text()
+	# Тут ти можеш увімкнути звук: $AudioStreamPlayer.play()
+	await get_tree().create_timer(2.0, false).timeout 
+	
+	# --- ПРОДОВЖЕННЯ ---
+	await play_line("ЛОЛІТА", "Певно, нам уже дійсно треба йти. А то пізно, темно вже зовсім. Батьки будуть переживати, якщо знову затримаюсь.", $MouthAnimationpers4)
+	
+	await play_line("БРАЯНТ", "Оу... Чекайте. Зачекайте секунду.", null)
+	
+	await play_line("РОРІ", "Ти куди зібрався? Нам в інший бік.", $MouthAnimationpers2)
+	
+	await play_line("БРАЯНТ", "Я забув свою кофту минулого разу в тому старому вагоні, де ми сиділи. Холодає, а вона улюблена. Я швидко, буквально одну хвилину!", null)
+	
+	await play_line("ЛОЛІТА", "Брайане, обережно там з ногою. Давай швидше і повертайся до нас.", $MouthAnimationpers4)
 	
 	DialogueManager.hide_text()
+	# ДІАЛОГ ЗАКІНЧЕНО! Тепер гравець може ходити.
+	
+	Transition.change_scene("res://scene/forest/new_forest.tscn")
+
+
+# ==========================================
+# СУПЕР-ФУНКЦІЯ ДЛЯ ДІАЛОГІВ (Додай її в кінець скрипта)
+# ==========================================
+func play_line(char_name: String, text: String, mouth: Node):
+	# Склеюємо ім'я та текст, щоб вийшло "Рорі: Мейсон уже всіх дістав..."
+	DialogueManager.show_text(char_name, text)
+	
+	# Вмикаємо рот, якщо ми його передали
+	if mouth != null:
+		mouth.visible = true
+		mouth.play("talk") # Або "default", перевір як називається твоя анімація
+		
+	# Чекаємо кліка по шестеренці!
+	await DialogueManager.next_clicked
+	
+	# Вимикаємо рот
+	if mouth != null:
+		mouth.stop()
+		mouth.visible = false
+		
+	# Мікро-пауза між фразами
+	await get_tree().create_timer(0.2, false).timeout
