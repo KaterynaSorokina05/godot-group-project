@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	GlobalMusic.play_music("res://scene/forest/F1.wav")
 	$BonfireAnimation.play("default")
 	Global.save_game(scene_file_path)
 	await get_tree().create_timer(3.0, false).timeout

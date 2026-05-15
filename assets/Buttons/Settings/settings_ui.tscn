@@ -27,7 +27,6 @@ texture_normal = ExtResource("1_hjxep")
 ignore_texture_size = true
 
 [node name="MenuOverlay" type="Control" parent="." unique_id=1303032654]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

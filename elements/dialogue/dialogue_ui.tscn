@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://d3pl5oepwped6" path="res://elements/dialogue/AmaticSC-Bold.ttf" id="3_cdl30"]
 
 [node name="DialogueUI" type="CanvasLayer" unique_id=1583076658]
-layer = 10
+layer = 3
 script = ExtResource("1_cdl30")
 
 [node name="DialogueBox" type="TextureRect" parent="." unique_id=21765234]

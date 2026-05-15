@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GlobalMusic.play_music("res://scene/forest/462d7efa5eb047a.mp3")
 	await get_tree().create_timer(5.0, false).timeout
 	Transition.change_scene("res://scene/forest/wagon_group.tscn")
 

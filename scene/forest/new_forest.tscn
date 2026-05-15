@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="4_7d17k"]
 [ext_resource type="FontFile" uid="uid://d3pl5oepwped6" path="res://elements/dialogue/AmaticSC-Bold.ttf" id="4_ndn40"]
 [ext_resource type="Texture2D" uid="uid://dv1u7nuerddj" path="res://scene/forest/bonfire-Photoroom.png" id="6_7d17k"]
+[ext_resource type="AudioStream" uid="uid://d2nnn3tpjrij0" path="res://scene/forest/zvuk_-_shagi (mp3cut.net).mp3" id="7_ad73n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ad73n"]
 atlas = ExtResource("6_7d17k")
@@ -48,10 +49,10 @@ scale = Vector2(1.0707182, 1.17)
 texture = ExtResource("1_t4337")
 
 [node name="MainHero" parent="." unique_id=676048312 instance=ExtResource("2_ij120")]
-position = Vector2(693, 406)
+position = Vector2(782, 371)
 
 [node name="StaticBody2D" parent="." unique_id=476889359 instance=ExtResource("4_7d17k")]
-position = Vector2(428, 158)
+position = Vector2(428, 161)
 
 [node name="CutsceneUI" type="CanvasLayer" parent="." unique_id=700207359]
 visible = false
@@ -88,14 +89,18 @@ frame_progress = 0.6635884
 [node name="MatthewTrigger" type="Area2D" parent="." unique_id=207397977]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MatthewTrigger" unique_id=1636047571]
-position = Vector2(533, 351)
+position = Vector2(525, 357)
 shape = SubResource("RectangleShape2D_7d17k")
 
 [node name="WagonTrigger" type="Area2D" parent="." unique_id=790867564]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WagonTrigger" unique_id=429263078]
-position = Vector2(1417, 349)
+position = Vector2(1434, 354)
 shape = SubResource("RectangleShape2D_7d17k")
+
+[node name="FootstepsPlayer" type="AudioStreamPlayer" parent="." unique_id=1527119100]
+stream = ExtResource("7_ad73n")
+bus = &"Sound"
 
 [connection signal="body_entered" from="MatthewTrigger" to="." method="_on_matthew_trigger_body_entered"]
 [connection signal="body_entered" from="WagonTrigger" to="." method="_on_wagon_trigger_body_entered"]

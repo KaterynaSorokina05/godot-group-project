@@ -9,16 +9,16 @@
 [node name="Group" type="Node2D" unique_id=960161698]
 
 [node name="MainHero" parent="." unique_id=676048312 instance=ExtResource("1_4rwov")]
-position = Vector2(545, 415)
+position = Vector2(535, 420)
 
 [node name="pers2" parent="." unique_id=969892659 instance=ExtResource("2_m1vs2")]
-position = Vector2(404, 326)
+position = Vector2(380, 327)
 
 [node name="pers5" parent="." unique_id=243810332 instance=ExtResource("3_gk2dm")]
 position = Vector2(389, 322)
 
 [node name="pers4" parent="." unique_id=1495747170 instance=ExtResource("4_34vhn")]
-position = Vector2(426, 336)
+position = Vector2(415, 336)
 scale = Vector2(0.95, 0.95)
 
 [node name="pers3" parent="." unique_id=809474841 instance=ExtResource("5_hiltj")]

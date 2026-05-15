@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	GlobalMusic.play_music("res://scene/forest/F1.wav")
 	
 	# 1. Поки екран чорний, забороняємо Браянту ходити
 	$MainHero.set_physics_process(false)
@@ -59,10 +60,11 @@ func _on_wagon_trigger_body_entered(body: Node2D) -> void:
 		var tween = create_tween()
 		tween.tween_property($CutsceneUI/ColorRect, "modulate:a", 1.0, 1.0)
 		await tween.finished
-		
+		$FootstepsPlayer.play()
 		# 2. Показуємо діалог поверх темряви
 		DialogueManager.show_text("БРАЯНТ", "Так, десь тут має бути.... Що, що це.... Йдіть сюди!")
 		await DialogueManager.next_clicked
+		$FootstepsPlayer.stop()
 		DialogueManager.hide_text()
 		
 		# 3. Переходимо до сцени з трупом! 

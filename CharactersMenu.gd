@@ -13,6 +13,7 @@ var images = [
 var current_index = 0
 
 func _ready():
+	GlobalMusic.play_music("res://intro.wav")
 	# При запуске сцены сразу показываем первую картинку (под номером 0)
 	show_character(current_index)
 

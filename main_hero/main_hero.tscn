@@ -11,15 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://dtd7c0xctaqdf" path="res://assets/Luko/r2.png" id="9_e45u4"]
 [ext_resource type="Texture2D" uid="uid://bddnhyy56j2te" path="res://assets/Luko/r3.png" id="10_5uo3b"]
 [ext_resource type="Texture2D" uid="uid://b8sjjss1kbskx" path="res://assets/Luko/r4.png" id="11_ty7cj"]
-[ext_resource type="Texture2D" uid="uid://dqlvhvqu4d7nu" path="res://assets/Luko/talkSpriteLeft(2).png" id="12_ty7cj"]
-[ext_resource type="Texture2D" uid="uid://c62bwryp78xt7" path="res://assets/Luko/talkSpriteLeft(3).png" id="13_u8bmm"]
-[ext_resource type="Texture2D" uid="uid://mb354483ft4c" path="res://assets/Luko/talkSpriteRight(2).png" id="14_jswpt"]
-[ext_resource type="Texture2D" uid="uid://bcj5bcpw2wd4s" path="res://assets/Luko/talkSpriteRight(3).png" id="15_0jsb0"]
+[ext_resource type="Texture2D" uid="uid://b8gmfq5ecudfp" path="res://assets/Luko/talkleft2.png" id="12_ty7cj"]
+[ext_resource type="Texture2D" uid="uid://6cy41fmar8cd" path="res://assets/Luko/talkleft3.png" id="13_u8bmm"]
+[ext_resource type="Texture2D" uid="uid://bncqkuo3furn2" path="res://assets/Luko/talkright2.png" id="14_jswpt"]
+[ext_resource type="Texture2D" uid="uid://ehmt1vm81a86" path="res://assets/Luko/talkrighr3.png" id="15_0jsb0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5uo3b"]
 animations = [{
 "frames": [{
-"duration": 0.9,
+"duration": 1.0,
 "texture": ExtResource("2_bub52")
 }],
 "loop": true,
@@ -92,7 +92,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ty7cj"]
-size = Vector2(300.8333, 986.6666)
+size = Vector2(340.8333, 1120)
 
 [node name="MainHero" type="CharacterBody2D" unique_id=676048312]
 script = ExtResource("1_di67e")
@@ -100,15 +100,16 @@ script = ExtResource("1_di67e")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1341376699]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_5uo3b")
-animation = &"default_right"
+animation = &"talk_right"
+frame_progress = 0.9347458
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D" unique_id=1653052614]
-position = Vector2(0, -426.00195)
+position = Vector2(0, -292.66876)
 limit_left = 0
 limit_right = 1810
 position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=967889122]
-position = Vector2(5.125001, -0.99999857)
+position = Vector2(-0.87499905, 19)
 scale = Vector2(0.3, 0.3)
 shape = SubResource("RectangleShape2D_ty7cj")

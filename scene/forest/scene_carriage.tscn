@@ -10,3 +10,5 @@ script = ExtResource("1_yhmq4")
 position = Vector2(575.49994, 293.44998)
 scale = Vector2(0.6838978, 0.6362567)
 texture = ExtResource("1_qdnuh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1618209882]
