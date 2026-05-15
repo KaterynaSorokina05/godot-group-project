@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dmeux7enxmr0q"]
+
+[ext_resource type="Texture2D" uid="uid://da6n2ry0lfefo" path="res://assets/sprites/pers3/mainSpriteLeft3(3).png" id="1_0156m"]
+[ext_resource type="Texture2D" uid="uid://bireo8ev328si" path="res://assets/sprites/pers3/mainSpriteRight3(3).png" id="2_kto5d"]
+[ext_resource type="Texture2D" uid="uid://didbceb8ffcsp" path="res://assets/sprites/pers3/talkSpriteLeft3(2).png" id="3_rhll3"]
+[ext_resource type="Texture2D" uid="uid://bh6rvijmefdij" path="res://assets/sprites/pers3/talkSpriteLeft3(3).png" id="4_0m4qo"]
+[ext_resource type="Texture2D" uid="uid://dfuq53tio0dph" path="res://assets/sprites/pers3/talkSpriteRight3(2).png" id="5_7uaot"]
+[ext_resource type="Texture2D" uid="uid://4oknahgl3cg6" path="res://assets/sprites/pers3/talkSpriteRight3(3).png" id="6_ix0dp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pso5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0156m")
+}],
+"loop": true,
+"name": &"default_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kto5d")
+}],
+"loop": true,
+"name": &"default_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rhll3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0m4qo")
+}],
+"loop": true,
+"name": &"talk_left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7uaot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ix0dp")
+}],
+"loop": true,
+"name": &"talk_right",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7sud"]
+size = Vector2(9.666667, 23.833334)
+
+[node name="pers3" type="CharacterBody2D" unique_id=809474841]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=671335346]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_pso5q")
+animation = &"talk_right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1198077348]
+visible = false
+position = Vector2(-40, 106)
+scale = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_g7sud")

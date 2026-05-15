@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dk3brchowc6pv"]
+
+[ext_resource type="Script" uid="uid://cb3klmupy61b3" path="res://scene/school/school_second_floor.gd" id="1_hwj7p"]
+[ext_resource type="Texture2D" uid="uid://iu37aic86qw" path="res://assets/school/second_floor.png" id="1_o2bll"]
+[ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="3_8gb6e"]
+[ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="4_vllxd"]
+[ext_resource type="Texture2D" uid="uid://cyws13cxmm1x" path="res://assets/Buttons/up_button.png" id="5_5ke4q"]
+[ext_resource type="Texture2D" uid="uid://c0i2i8jyvv20h" path="res://assets/Buttons/down_button.png" id="6_1n8iw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of25s"]
+atlas = ExtResource("5_5ke4q")
+region = Rect2(0, 0, 273, 323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eol6s"]
+atlas = ExtResource("6_1n8iw")
+region = Rect2(0, 0, 273, 324)
+
+[node name="school_second_floor" type="Node2D" unique_id=1930870811]
+script = ExtResource("1_hwj7p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1135810971]
+position = Vector2(905, 296)
+texture = ExtResource("1_o2bll")
+
+[node name="ButtonUP" type="TextureButton" parent="." unique_id=960113146]
+offset_left = 1465.0
+offset_top = 272.0
+offset_right = 1738.0
+offset_bottom = 595.0
+scale = Vector2(0.13, 0.13)
+texture_normal = SubResource("AtlasTexture_of25s")
+
+[node name="ButtonDOWN" type="TextureButton" parent="." unique_id=221415949]
+offset_left = 1465.0
+offset_top = 318.0
+offset_right = 1738.0
+offset_bottom = 642.0
+scale = Vector2(0.13, 0.13)
+texture_normal = SubResource("AtlasTexture_eol6s")
+
+[node name="MainHero" parent="." unique_id=676048312 instance=ExtResource("4_vllxd")]
+position = Vector2(1600, 423)
+
+[node name="StaticBody2D" parent="." unique_id=476889359 instance=ExtResource("3_8gb6e")]
+position = Vector2(0, 174)
+
+[connection signal="pressed" from="ButtonUP" to="." method="_on_button_up_pressed"]
+[connection signal="pressed" from="ButtonDOWN" to="." method="_on_button_down_pressed"]

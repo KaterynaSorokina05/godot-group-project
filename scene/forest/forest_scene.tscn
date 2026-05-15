@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://b3vn7g2op2lel"]
+
+[ext_resource type="Script" uid="uid://b4hi3xqcwb6he" path="res://scene/forest/forest_scene.gd" id="1_syrhl"]
+[ext_resource type="Texture2D" uid="uid://dyh5q5wquwu1y" path="res://scene/forest/forest_scene.png" id="2_c0iry"]
+[ext_resource type="Texture2D" uid="uid://b2oac5nqjxb6v" path="res://assets/sprites/pers2/talkSpriteRight2(2).png" id="2_syrhl"]
+[ext_resource type="Texture2D" uid="uid://cotyb2eqqs77o" path="res://assets/sprites/pers2/talkSpriteRight2(3).png" id="3_c0iry"]
+[ext_resource type="Texture2D" uid="uid://dfuq53tio0dph" path="res://assets/sprites/pers3/talkSpriteRight3(2).png" id="4_hr6fi"]
+[ext_resource type="Texture2D" uid="uid://4oknahgl3cg6" path="res://assets/sprites/pers3/talkSpriteRight3(3).png" id="5_np7fr"]
+[ext_resource type="Texture2D" uid="uid://cxmy5ply8j3fp" path="res://assets/sprites/pers4/talkSpriteRight4(2).png" id="6_ps8cx"]
+[ext_resource type="Texture2D" uid="uid://bguxyc0o2io3k" path="res://assets/sprites/pers4/talkSpriteRight4(3).png" id="7_4bncv"]
+[ext_resource type="Texture2D" uid="uid://vw5grxt14k8b" path="res://assets/sprites/pers5/talkSpriteRight5(2).png" id="8_3wdfo"]
+[ext_resource type="Texture2D" uid="uid://cnequ60dhlm5c" path="res://assets/sprites/pers5/talkSpriteRight5(3).png" id="9_s1yc7"]
+[ext_resource type="PackedScene" uid="uid://bxovre6id4poc" path="res://elements/black_screen/transition.tscn" id="12_np7fr"]
+[ext_resource type="Texture2D" uid="uid://ciwcyygnqhqeb" path="res://scene/forest/1.png" id="13_4bncv"]
+[ext_resource type="FontFile" uid="uid://d3pl5oepwped6" path="res://elements/dialogue/AmaticSC-Bold.ttf" id="13_ps8cx"]
+[ext_resource type="Texture2D" uid="uid://fkqwjs6jvkws" path="res://scene/forest/2.png" id="14_3wdfo"]
+[ext_resource type="Texture2D" uid="uid://bfqw3j5rnkwuc" path="res://scene/forest/3.png" id="15_s1yc7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv1mh"]
+atlas = ExtResource("2_syrhl")
+region = Rect2(324, 517, 36, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf3w0"]
+atlas = ExtResource("3_c0iry")
+region = Rect2(324, 517, 36, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_68tip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv1mh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf3w0")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lx0p"]
+atlas = ExtResource("4_hr6fi")
+region = Rect2(300, 666, 30, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sylff"]
+atlas = ExtResource("5_np7fr")
+region = Rect2(300, 666, 30, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ce4eh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lx0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sylff")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udoug"]
+atlas = ExtResource("6_ps8cx")
+region = Rect2(450, 629, 30, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0htx"]
+atlas = ExtResource("7_4bncv")
+region = Rect2(450, 629, 30, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ynttr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udoug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0htx")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l7h6"]
+atlas = ExtResource("8_3wdfo")
+region = Rect2(180, 646, 30, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_881e6"]
+atlas = ExtResource("9_s1yc7")
+region = Rect2(180, 646, 30, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y114l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7l7h6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_881e6")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3wdfo"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("13_4bncv")
+}, {
+"duration": 0.8,
+"texture": ExtResource("14_3wdfo")
+}, {
+"duration": 0.8,
+"texture": ExtResource("15_s1yc7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
+[node name="Forest_scene" type="Node2D" unique_id=175897201]
+script = ExtResource("1_syrhl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=161834406]
+position = Vector2(905, 296)
+texture = ExtResource("2_c0iry")
+
+[node name="MouthAnimationpers2" type="AnimatedSprite2D" parent="." unique_id=1847749771]
+visible = false
+position = Vector2(262.5, 260.00003)
+scale = Vector2(0.527778, 0.5)
+sprite_frames = SubResource("SpriteFrames_68tip")
+animation = &"talk"
+frame = 1
+frame_progress = 0.13612787
+
+[node name="MouthAnimationpers3" type="AnimatedSprite2D" parent="." unique_id=337204660]
+visible = false
+position = Vector2(356.00003, 304.00003)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_ce4eh")
+animation = &"talk"
+
+[node name="MouthAnimationpers4" type="AnimatedSprite2D" parent="." unique_id=1681495457]
+visible = false
+position = Vector2(211, 310)
+scale = Vector2(0.55, 0.55)
+sprite_frames = SubResource("SpriteFrames_ynttr")
+animation = &"talk"
+
+[node name="MouthAnimationpers5" type="AnimatedSprite2D" parent="." unique_id=372244315]
+visible = false
+position = Vector2(448.9082, 288.3455)
+rotation = 0.2598053
+scale = Vector2(0.35, 0.38365188)
+sprite_frames = SubResource("SpriteFrames_y114l")
+animation = &"talk"
+frame_progress = 0.5157572
+
+[node name="CutsceneUI" type="CanvasLayer" parent="." unique_id=1078354795]
+visible = false
+
+[node name="Transition" parent="CutsceneUI" unique_id=1689698580 instance=ExtResource("12_np7fr")]
+visible = false
+
+[node name="Label" type="Label" parent="CutsceneUI" unique_id=1398068385]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.5
+offset_top = -35.0
+offset_right = 224.5
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("13_ps8cx")
+theme_override_font_sizes/font_size = 55
+
+[node name="BonfireAnimation" type="AnimatedSprite2D" parent="." unique_id=1235399978]
+position = Vector2(553.99994, 429)
+scale = Vector2(0.38, 0.38)
+sprite_frames = SubResource("SpriteFrames_3wdfo")

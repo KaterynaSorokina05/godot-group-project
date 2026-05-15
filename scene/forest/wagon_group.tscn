@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ciklumcsa07rs"]
+
+[ext_resource type="Script" uid="uid://d4xw88mexibx" path="res://scene/forest/wagon_group.gd" id="1_hxarf"]
+[ext_resource type="Texture2D" uid="uid://bytg6wl2nktqf" path="res://scene/forest/forest_scene2.png" id="1_oxm5r"]
+[ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="2_hxarf"]
+[ext_resource type="PackedScene" uid="uid://cmrjdj5u5kh8k" path="res://elements/group.tscn" id="3_kxq4s"]
+
+[node name="WagonGroup" type="Node2D" unique_id=1048218930]
+script = ExtResource("1_hxarf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1974935559]
+position = Vector2(283, 263)
+scale = Vector2(1.45, 1.45)
+texture = ExtResource("1_oxm5r")
+
+[node name="StaticBody2D" parent="." unique_id=476889359 instance=ExtResource("2_hxarf")]
+position = Vector2(34, 188)
+
+[node name="Group" parent="." unique_id=960161698 instance=ExtResource("3_kxq4s")]
+position = Vector2(354, -91)
+scale = Vector2(1.2, 1.2)

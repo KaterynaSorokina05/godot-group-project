@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cms4xkx18di12"]
+[gd_scene format=3 uid="uid://cms4xkx18di12"]
 
 [ext_resource type="Texture2D" uid="uid://h0m5v3wksoy1" path="res://Images/MainMenu/mainMenuBackg.png" id="1_7ycvg"]
+[ext_resource type="Script" uid="uid://tyutay35c1it" path="res://main_scene.gd" id="1_wr18j"]
 [ext_resource type="Texture2D" uid="uid://dchns38xxq1pf" path="res://Images/MainMenu/newGameBtn.png" id="2_7ycvg"]
 [ext_resource type="Texture2D" uid="uid://bdmo2sfv7n1y1" path="res://Images/MainMenu/newGameBtnActive.png" id="3_wr18j"]
 [ext_resource type="Texture2D" uid="uid://dhofnkcwmm48b" path="res://Images/MainMenu/continueBtn.png" id="4_7ycvg"]
@@ -10,9 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://bs4va54eya123" path="res://Images/MainMenu/exitBtn.png" id="8_mo76n"]
 [ext_resource type="Texture2D" uid="uid://bsoiirkjvj45i" path="res://Images/MainMenu/exitBtnActive.png" id="9_42l1d"]
 
-[node name="Node2D" type="CanvasLayer"]
+[node name="Node2D" type="CanvasLayer" unique_id=233461562]
+script = ExtResource("1_wr18j")
 
-[node name="MainMenuBackg" type="TextureRect" parent="."]
+[node name="MainMenuBackg" type="TextureRect" parent="." unique_id=176131534]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,7 +25,7 @@ texture = ExtResource("1_7ycvg")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="MainMenuBackg"]
+[node name="MarginContainer" type="MarginContainer" parent="MainMenuBackg" unique_id=1933064693]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -35,13 +37,13 @@ offset_bottom = 162.0
 grow_vertical = 2
 theme_override_constants/margin_left = 52
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuBackg/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuBackg/MarginContainer" unique_id=1233011672]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 10
 
-[node name="newGameBtn" type="TextureButton" parent="MainMenuBackg/MarginContainer/VBoxContainer"]
+[node name="newGameBtn" type="TextureButton" parent="MainMenuBackg/MarginContainer/VBoxContainer" unique_id=1855842675]
 custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 texture_normal = ExtResource("2_7ycvg")
@@ -49,7 +51,7 @@ texture_hover = ExtResource("3_wr18j")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="continueBtn" type="TextureButton" parent="MainMenuBackg/MarginContainer/VBoxContainer"]
+[node name="continueBtn" type="TextureButton" parent="MainMenuBackg/MarginContainer/VBoxContainer" unique_id=1575485639]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 texture_normal = ExtResource("4_7ycvg")
@@ -57,7 +59,7 @@ texture_hover = ExtResource("5_wr18j")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="charactersBtn" type="TextureButton" parent="MainMenuBackg/MarginContainer/VBoxContainer"]
+[node name="charactersBtn" type="TextureButton" parent="MainMenuBackg/MarginContainer/VBoxContainer" unique_id=198676075]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 texture_normal = ExtResource("6_qwutr")
@@ -65,10 +67,15 @@ texture_hover = ExtResource("7_671wp")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="exitBtn" type="TextureButton" parent="MainMenuBackg/MarginContainer/VBoxContainer"]
+[node name="exitBtn" type="TextureButton" parent="MainMenuBackg/MarginContainer/VBoxContainer" unique_id=731893853]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 texture_normal = ExtResource("8_mo76n")
 texture_hover = ExtResource("9_42l1d")
 ignore_texture_size = true
 stretch_mode = 5
+
+[connection signal="pressed" from="MainMenuBackg/MarginContainer/VBoxContainer/newGameBtn" to="." method="_on_new_game_btn_pressed"]
+[connection signal="pressed" from="MainMenuBackg/MarginContainer/VBoxContainer/continueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="MainMenuBackg/MarginContainer/VBoxContainer/charactersBtn" to="." method="_on_characters_btn_pressed"]
+[connection signal="pressed" from="MainMenuBackg/MarginContainer/VBoxContainer/exitBtn" to="." method="_on_exit_btn_pressed"]

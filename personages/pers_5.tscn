@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://0kqvsygafet"]
+
+[ext_resource type="Texture2D" uid="uid://d1qn2j4aixjad" path="res://assets/sprites/pers5/mainSpriteLeft5(3).png" id="1_mrek2"]
+[ext_resource type="Texture2D" uid="uid://dgyprrougo173" path="res://assets/sprites/pers5/mainSpriteRight5(3).png" id="2_n3vc0"]
+[ext_resource type="Texture2D" uid="uid://bvada3huii2cm" path="res://assets/sprites/pers5/talkSpriteLeft5(2).png" id="3_omk66"]
+[ext_resource type="Texture2D" uid="uid://j0bwp5glvqhk" path="res://assets/sprites/pers5/talkSpriteLeft5(3).png" id="4_jnlqt"]
+[ext_resource type="Texture2D" uid="uid://vw5grxt14k8b" path="res://assets/sprites/pers5/talkSpriteRight5(2).png" id="5_at4gm"]
+[ext_resource type="Texture2D" uid="uid://cnequ60dhlm5c" path="res://assets/sprites/pers5/talkSpriteRight5(3).png" id="6_5j3lh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kush"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mrek2")
+}],
+"loop": true,
+"name": &"default_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n3vc0")
+}],
+"loop": true,
+"name": &"default_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_omk66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jnlqt")
+}],
+"loop": true,
+"name": &"talk_left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_at4gm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5j3lh")
+}],
+"loop": true,
+"name": &"talk_right",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbnjn"]
+size = Vector2(13.699999, 30.199997)
+
+[node name="pers5" type="CharacterBody2D" unique_id=243810332]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=815829930]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_4kush")
+animation = &"talk_right"
+frame_progress = 0.38207895
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2097690770]
+visible = false
+position = Vector2(-47.499996, 100)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_rbnjn")

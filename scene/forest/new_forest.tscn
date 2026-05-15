@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://da0dtiwpnnwjh"]
+
+[ext_resource type="Script" uid="uid://bwp0n75beu2x2" path="res://new_forest.gd" id="1_ndn40"]
+[ext_resource type="Texture2D" uid="uid://bytg6wl2nktqf" path="res://scene/forest/forest_scene2.png" id="1_t4337"]
+[ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="2_ij120"]
+[ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="4_7d17k"]
+[ext_resource type="FontFile" uid="uid://d3pl5oepwped6" path="res://elements/dialogue/AmaticSC-Bold.ttf" id="4_ndn40"]
+[ext_resource type="Texture2D" uid="uid://dv1u7nuerddj" path="res://scene/forest/bonfire-Photoroom.png" id="6_7d17k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad73n"]
+atlas = ExtResource("6_7d17k")
+region = Rect2(0, 0, 426, 418)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqf1v"]
+atlas = ExtResource("6_7d17k")
+region = Rect2(426, 0, 426, 418)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3xdj"]
+atlas = ExtResource("6_7d17k")
+region = Rect2(852, 0, 426, 418)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qvy6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad73n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqf1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3xdj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7d17k"]
+size = Vector2(126.65625, 404)
+
+[node name="NewForest" type="Node2D" unique_id=653721926]
+script = ExtResource("1_ndn40")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=691155341]
+position = Vector2(862.99994, 293.61603)
+scale = Vector2(1.0707182, 1.17)
+texture = ExtResource("1_t4337")
+
+[node name="MainHero" parent="." unique_id=676048312 instance=ExtResource("2_ij120")]
+position = Vector2(693, 406)
+
+[node name="StaticBody2D" parent="." unique_id=476889359 instance=ExtResource("4_7d17k")]
+position = Vector2(428, 158)
+
+[node name="CutsceneUI" type="CanvasLayer" parent="." unique_id=700207359]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CutsceneUI" unique_id=300175035]
+offset_left = -193.0
+offset_top = -206.0
+offset_right = 1841.0
+offset_bottom = 784.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CutsceneUI" unique_id=1155131868]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -41.5
+offset_right = 265.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_ndn40")
+theme_override_font_sizes/font_size = 65
+text = "Брайян підходить до вагону"
+
+[node name="BonfireAnimation" type="AnimatedSprite2D" parent="." unique_id=1440140834]
+position = Vector2(505, 439)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_6qvy6")
+frame_progress = 0.6635884
+
+[node name="MatthewTrigger" type="Area2D" parent="." unique_id=207397977]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MatthewTrigger" unique_id=1636047571]
+position = Vector2(533, 351)
+shape = SubResource("RectangleShape2D_7d17k")
+
+[node name="WagonTrigger" type="Area2D" parent="." unique_id=790867564]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WagonTrigger" unique_id=429263078]
+position = Vector2(1417, 349)
+shape = SubResource("RectangleShape2D_7d17k")
+
+[connection signal="body_entered" from="MatthewTrigger" to="." method="_on_matthew_trigger_body_entered"]
+[connection signal="body_entered" from="WagonTrigger" to="." method="_on_wagon_trigger_body_entered"]

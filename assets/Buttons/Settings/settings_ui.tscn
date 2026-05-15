@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://btppctvjjfudf"]
+
+[ext_resource type="Texture2D" uid="uid://v750vug1kef1" path="res://assets/Buttons/Settings/settings.png" id="1_hjxep"]
+[ext_resource type="Script" uid="uid://behmo1erlpnc8" path="res://assets/Buttons/Settings/settings_ui.gd" id="1_ihthd"]
+[ext_resource type="Texture2D" uid="uid://cf3hydmcl5cbb" path="res://assets/Buttons/Settings/soundON.png" id="3_o3yh8"]
+[ext_resource type="Texture2D" uid="uid://ckfeqpa715l8a" path="res://assets/Buttons/Settings/melodyON.png" id="5_tx14k"]
+[ext_resource type="Texture2D" uid="uid://dwxjrnsjojhqt" path="res://assets/Buttons/Settings/closeBtn.png" id="7_7p8rn"]
+[ext_resource type="Texture2D" uid="uid://dg38lu77tqo8v" path="res://assets/Buttons/Settings/menuBtn.png" id="7_ihthd"]
+[ext_resource type="Texture2D" uid="uid://1v28un462yck" path="res://assets/Buttons/Settings/menuBtnActive.png" id="8_o3yh8"]
+[ext_resource type="Texture2D" uid="uid://ow7etw7hr52a" path="res://assets/Buttons/Settings/closeBtnActive.png" id="8_w66xl"]
+
+[node name="SettingsUI" type="CanvasLayer" unique_id=338595193]
+process_mode = 3
+layer = 100
+script = ExtResource("1_ihthd")
+
+[node name="SettingsButton" type="TextureButton" parent="." unique_id=1593071629]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_right = 434.0
+offset_bottom = 592.0
+grow_horizontal = 0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("1_hjxep")
+ignore_texture_size = true
+
+[node name="MenuOverlay" type="Control" parent="." unique_id=1303032654]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="MenuOverlay" unique_id=1239262404]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 1152.0
+offset_bottom = 592.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuOverlay/ColorRect" unique_id=1365295693]
+layout_mode = 0
+offset_right = 1115.0
+offset_bottom = 2047.0
+
+[node name="SoundButton" type="TextureButton" parent="MenuOverlay/ColorRect/VBoxContainer" unique_id=890762947]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_o3yh8")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="MelodyButton" type="TextureButton" parent="MenuOverlay/ColorRect/VBoxContainer" unique_id=863844745]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_tx14k")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="CloseButton" type="TextureButton" parent="MenuOverlay/ColorRect/VBoxContainer" unique_id=1779715327]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_7p8rn")
+texture_hover = ExtResource("8_w66xl")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="MenuButton" type="TextureButton" parent="MenuOverlay/ColorRect/VBoxContainer" unique_id=970730551]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_ihthd")
+texture_hover = ExtResource("8_o3yh8")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MenuOverlay/ColorRect/VBoxContainer/SoundButton" to="." method="_on_sound_button_pressed"]
+[connection signal="pressed" from="MenuOverlay/ColorRect/VBoxContainer/MelodyButton" to="." method="_on_melody_button_pressed"]
+[connection signal="pressed" from="MenuOverlay/ColorRect/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="MenuOverlay/ColorRect/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

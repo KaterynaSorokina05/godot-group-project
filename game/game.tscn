@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bxvya4ocnxx4q"]
+
+[ext_resource type="PackedScene" uid="uid://by40lal0y7eyi" path="res://scene/school/school_first_floor.tscn" id="1_h7iqs"]
+
+[node name="Game" type="Node2D" unique_id=1235855617]
+texture_filter = 3
+
+[node name="School_first_floor" parent="." unique_id=133936008 instance=ExtResource("1_h7iqs")]
+position = Vector2(0, -1)

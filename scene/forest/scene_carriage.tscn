@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c10pf0pkyosns"]
+
+[ext_resource type="Texture2D" uid="uid://50vsdjhej3pe" path="res://scene/forest/carriage.png" id="1_qdnuh"]
+[ext_resource type="Script" uid="uid://ch1jf1c7bqegm" path="res://scene/forest/scene_carriage.gd" id="1_yhmq4"]
+
+[node name="scene_carriage" type="Node2D" unique_id=275595632]
+script = ExtResource("1_yhmq4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=854280004]
+position = Vector2(575.49994, 293.44998)
+scale = Vector2(0.6838978, 0.6362567)
+texture = ExtResource("1_qdnuh")
