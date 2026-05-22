@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bfuvapbeql43n"]
+
+[ext_resource type="Script" uid="uid://dx5uqmo632xbs" path="res://scene/school/lab.gd" id="1_qe8mk"]
+[ext_resource type="Texture2D" uid="uid://bdbhp4xlrl2dx" path="res://background/lab.png" id="2_qe8mk"]
+[ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="2_yrwfp"]
+[ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="3_qe8mk"]
+[ext_resource type="Script" uid="uid://b6ioh431tp3wc" path="res://scene/school/collision_shape_2d.gd" id="3_yrwfp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3a3ij"]
+size = Vector2(270, 550.5)
+
+[node name="Lab" type="Node2D" unique_id=1751643176]
+script = ExtResource("1_qe8mk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=747133642]
+position = Vector2(1110, -1152.0001)
+scale = Vector2(1.5651523, 1.2182698)
+texture = ExtResource("2_qe8mk")
+centered = false
+offset = Vector2(-1000, -400)
+
+[node name="StaticBody2D" parent="Sprite2D" unique_id=476889359 instance=ExtResource("2_yrwfp")]
+position = Vector2(-670.2223, -373.48038)
+scale = Vector2(0.60857797, 1.5593249)
+
+[node name="MainHero" parent="Sprite2D" unique_id=676048312 instance=ExtResource("3_qe8mk")]
+position = Vector2(-454.26886, 109.99213)
+scale = Vector2(0.9583731, 1.2312543)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1256274828]
+position = Vector2(-37, -401)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2074183078]
+position = Vector2(158, -662.25)
+shape = SubResource("RectangleShape2D_3a3ij")
+script = ExtResource("3_yrwfp")
+
+[node name="talk" type="Area2D" parent="Area2D" unique_id=532354764]
+position = Vector2(854, -145)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/talk" unique_id=974518287]
+position = Vector2(158, -662.25)
+shape = SubResource("RectangleShape2D_3a3ij")
+script = ExtResource("3_yrwfp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D/talk" to="." method="_on_talk_body_entered"]

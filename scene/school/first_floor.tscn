@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bth8ap2536dti"]
+
+[ext_resource type="Script" uid="uid://hrw4cjef4t5m" path="res://scene/school/first_floor.gd" id="1_kc3ne"]
+[ext_resource type="Texture2D" uid="uid://dkdc6bhbjobxb" path="res://background/firstplatform(2).png" id="2_kc3ne"]
+[ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="3_87scm"]
+[ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="4_bxig8"]
+[ext_resource type="FontFile" uid="uid://d3pl5oepwped6" path="res://elements/dialogue/AmaticSC-Bold.ttf" id="5_vtpji"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vpo2"]
+size = Vector2(294.9933, 558.68854)
+
+[node name="FirstFloor" type="Node2D" unique_id=591646693]
+script = ExtResource("1_kc3ne")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2034992461]
+position = Vector2(315, 128)
+scale = Vector2(1.4420804, 1.4420804)
+texture = ExtResource("2_kc3ne")
+centered = false
+offset = Vector2(-1000, -400)
+
+[node name="StaticBody2D" parent="Sprite2D" unique_id=476889359 instance=ExtResource("4_bxig8")]
+z_index = 1
+position = Vector2(-834.9049, -348.1082)
+scale = Vector2(0.73256314, 0.9046417)
+
+[node name="stairs" type="Area2D" parent="." unique_id=1791759190]
+position = Vector2(-1436, -129)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stairs" unique_id=505681993]
+position = Vector2(815, 10)
+scale = Vector2(1.0800024, 1)
+shape = SubResource("RectangleShape2D_1vpo2")
+
+[node name="yard" type="Area2D" parent="." unique_id=2017065831]
+position = Vector2(-307, -111)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yard" unique_id=1524798434]
+position = Vector2(1103, -15)
+scale = Vector2(1.0800024, 1)
+shape = SubResource("RectangleShape2D_1vpo2")
+
+[node name="MainHero" parent="." unique_id=676048312 instance=ExtResource("3_87scm")]
+position = Vector2(179, -18)
+scale = Vector2(1, 1.0000001)
+
+[node name="Label" type="Label" parent="." unique_id=1518086200]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 737.0
+offset_top = -347.0
+offset_right = 954.25165
+offset_bottom = -264.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5071057, 0.36105314)
+theme_override_fonts/font = ExtResource("5_vtpji")
+theme_override_font_sizes/font_size = 65
+text = "yard"
+
+[connection signal="body_exited" from="stairs" to="." method="_on_stairs_body_exited"]
+[connection signal="body_shape_entered" from="stairs" to="." method="_on_stairs_body_shape_entered"]
+[connection signal="body_exited" from="yard" to="." method="_on_yard_body_exited"]
+[connection signal="body_shape_entered" from="yard" to="." method="_on_yard_body_shape_entered"]

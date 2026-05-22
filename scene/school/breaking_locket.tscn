@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dimtvjx3thsuc"]
+
+[ext_resource type="Texture2D" uid="uid://cnwgx6be4af2q" path="res://background/second_platform.png" id="1_n55nq"]
+[ext_resource type="Script" uid="uid://bbl36nlv2pm64" path="res://scene/school/breaking_locket.gd" id="1_rqhlb"]
+[ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="2_tdo4p"]
+[ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="3_rqhlb"]
+[ext_resource type="PackedScene" uid="uid://jvj7nj6v2h7p" path="res://personages/pers_2.tscn" id="4_rtoxe"]
+[ext_resource type="PackedScene" uid="uid://dmeux7enxmr0q" path="res://personages/pers_3.tscn" id="5_66u2i"]
+[ext_resource type="PackedScene" uid="uid://d01cc1ixp0emh" path="res://personages/pers_4.tscn" id="6_btqww"]
+[ext_resource type="PackedScene" uid="uid://0kqvsygafet" path="res://personages/pers_5.tscn" id="7_ytbyv"]
+[ext_resource type="Script" uid="uid://b6ioh431tp3wc" path="res://scene/school/collision_shape_2d.gd" id="9_rtoxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66u2i"]
+size = Vector2(270, 550.5)
+
+[node name="BreakingLocket" type="Node2D" unique_id=2014739323]
+script = ExtResource("1_rqhlb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=509062378]
+position = Vector2(586, 361)
+scale = Vector2(1.4237288, 1.4237288)
+texture = ExtResource("1_n55nq")
+centered = false
+offset = Vector2(-1000, -400)
+
+[node name="StaticBody2D" parent="Sprite2D" unique_id=476889359 instance=ExtResource("3_rqhlb")]
+z_index = 1
+position = Vector2(-764.19037, -348.38095)
+scale = Vector2(0.73256314, 0.9046417)
+
+[node name="pers2" parent="." unique_id=969892659 instance=ExtResource("4_rtoxe")]
+position = Vector2(270, 77)
+
+[node name="pers3" parent="." unique_id=809474841 instance=ExtResource("5_66u2i")]
+position = Vector2(208, 40)
+
+[node name="pers4" parent="." unique_id=1495747170 instance=ExtResource("6_btqww")]
+position = Vector2(282, 59)
+
+[node name="pers5" parent="." unique_id=243810332 instance=ExtResource("7_ytbyv")]
+position = Vector2(196, 85)
+
+[node name="MainHero" parent="." unique_id=676048312 instance=ExtResource("2_tdo4p")]
+position = Vector2(-228, 219)
+scale = Vector2(1, 1.0000001)
+
+[node name="talk" type="Area2D" parent="." unique_id=1982243747]
+position = Vector2(-55, 769)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="talk" unique_id=1631693016]
+position = Vector2(158, -662.25)
+shape = SubResource("RectangleShape2D_66u2i")
+script = ExtResource("9_rtoxe")
+
+[connection signal="body_entered" from="talk" to="." method="_on_talk_body_entered"]

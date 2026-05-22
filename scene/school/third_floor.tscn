@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://crees26jf1nl0"]
+
+[ext_resource type="Script" uid="uid://b0cvb4fygq5rr" path="res://scene/school/third_floor.gd" id="1_deiuw"]
+[ext_resource type="Texture2D" uid="uid://cwoehetw04pkx" path="res://background/thirdplatform.png" id="2_2wayd"]
+[ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="3_g0dsc"]
+[ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="4_8ekij"]
+[ext_resource type="Script" uid="uid://b6ioh431tp3wc" path="res://scene/school/collision_shape_2d.gd" id="5_g0dsc"]
+[ext_resource type="PackedScene" uid="uid://jvj7nj6v2h7p" path="res://personages/pers_2.tscn" id="6_ogdbn"]
+[ext_resource type="PackedScene" uid="uid://d01cc1ixp0emh" path="res://personages/pers_4.tscn" id="7_2geld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ekij"]
+size = Vector2(270, 550.5)
+
+[node name="ThirdFloor" type="Node2D" unique_id=2144628427]
+script = ExtResource("1_deiuw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=616383611]
+position = Vector2(16.000011, 371)
+scale = Vector2(1.735577, 1.735577)
+texture = ExtResource("2_2wayd")
+centered = false
+offset = Vector2(-1000, -400)
+
+[node name="MainHero" parent="Sprite2D" unique_id=676048312 instance=ExtResource("3_g0dsc")]
+position = Vector2(239.11356, -168.81992)
+scale = Vector2(0.5761772, 0.5761772)
+
+[node name="StaticBody2D" parent="Sprite2D" unique_id=476889359 instance=ExtResource("4_8ekij")]
+z_index = 1
+position = Vector2(-677.5845, -386.61496)
+scale = Vector2(0.5712328, 0.9046417)
+
+[node name="stairs" type="Area2D" parent="." unique_id=22704019]
+position = Vector2(444, 731)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stairs" unique_id=120476123]
+position = Vector2(158, -662.25)
+shape = SubResource("RectangleShape2D_8ekij")
+script = ExtResource("5_g0dsc")
+
+[node name="talk" type="Area2D" parent="." unique_id=1851613152]
+position = Vector2(-1334, 708)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="talk" unique_id=1373704821]
+position = Vector2(158, -662.25)
+shape = SubResource("RectangleShape2D_8ekij")
+script = ExtResource("5_g0dsc")
+
+[node name="math" type="Area2D" parent="." unique_id=1353279212]
+position = Vector2(-954, 700)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="math" unique_id=1852145512]
+position = Vector2(158, -662.25)
+shape = SubResource("RectangleShape2D_8ekij")
+script = ExtResource("5_g0dsc")
+
+[node name="pers2" parent="." unique_id=969892659 instance=ExtResource("6_ogdbn")]
+position = Vector2(-1381, 66)
+
+[node name="pers4" parent="." unique_id=1495747170 instance=ExtResource("7_2geld")]
+position = Vector2(-1306, 27)
+
+[connection signal="body_exited" from="stairs" to="." method="_on_stairs_body_exited"]
+[connection signal="body_shape_entered" from="stairs" to="." method="_on_stairs_body_shape_entered"]
+[connection signal="body_entered" from="talk" to="." method="_on_talk_body_entered"]
+[connection signal="body_exited" from="math" to="." method="_on_math_body_exited"]
+[connection signal="body_shape_entered" from="math" to="." method="_on_math_body_shape_entered"]

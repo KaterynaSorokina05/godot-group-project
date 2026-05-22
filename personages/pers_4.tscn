@@ -54,7 +54,7 @@ size = Vector2(9.666666, 26.500002)
 [node name="pers4" type="CharacterBody2D" unique_id=1495747170]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=316664844]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.44, 0.44)
 sprite_frames = SubResource("SpriteFrames_642bg")
 animation = &"default_left"
 

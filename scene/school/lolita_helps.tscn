@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bgbuyht63w1fo"]
+
+[ext_resource type="Script" uid="uid://b60cusp25gnw3" path="res://scene/school/lolita_helps.gd" id="1_r6bmy"]
+[ext_resource type="Texture2D" uid="uid://d1on6liyvf67g" path="res://cutscene/cutscene2.png" id="2_sikgo"]
+
+[node name="LolitaHelps" type="Node2D" unique_id=182248031]
+script = ExtResource("1_r6bmy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=87116477]
+position = Vector2(575.00006, 293)
+scale = Vector2(0.8324119, 0.76975995)
+texture = ExtResource("2_sikgo")

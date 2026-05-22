@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b0nc4mtwyo2bf"]
+
+[ext_resource type="Script" uid="uid://bv5e8dunkctcx" path="res://scene/school/meison_hits.gd" id="1_461rr"]
+[ext_resource type="Texture2D" uid="uid://caay0m6osayda" path="res://cutscene/cutscene3.png" id="2_jslf0"]
+
+[node name="MeisonHits" type="Node2D" unique_id=2060947886]
+script = ExtResource("1_461rr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1689700085]
+position = Vector2(575.00006, 293)
+scale = Vector2(0.6838978, 0.6362567)
+texture = ExtResource("2_jslf0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1586491185]

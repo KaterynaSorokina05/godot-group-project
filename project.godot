@@ -25,7 +25,7 @@ Global="*uid://dyjkindec6tla"
 Transition="*uid://bxovre6id4poc"
 SettingsUI="*uid://btppctvjjfudf"
 DialogueManager="*uid://dy08uevfibb6a"
-GlobalMusic="*uid://bdapv1c72cfy"
+GlobalMusic="*uid://bj7aabj7f6euu"
 
 [display]
 
@@ -55,3 +55,4 @@ move_right={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
