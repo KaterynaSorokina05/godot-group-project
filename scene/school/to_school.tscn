@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://by51ldwm8as7n"]
+
+[ext_resource type="Script" uid="uid://b21n66til8psi" path="res://scene/school/to_school.gd" id="1_y7eng"]
+[ext_resource type="Texture2D" uid="uid://bbssl66utt7mm" path="res://background/firstplatform.png" id="2_snt6q"]
+[ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="3_aligp"]
+[ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="4_snt6q"]
+[ext_resource type="PackedScene" uid="uid://d01cc1ixp0emh" path="res://personages/pers_4.tscn" id="5_2s7vj"]
+[ext_resource type="PackedScene" uid="uid://bv83pkyhom8o" path="res://personages/pers_6.tscn" id="6_fi62h"]
+[ext_resource type="FontFile" uid="uid://d3pl5oepwped6" path="res://elements/dialogue/AmaticSC-Bold.ttf" id="7_snt6q"]
+
+[node name="ToSchool" type="Node2D" unique_id=465821235]
+script = ExtResource("1_y7eng")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=598436852]
+position = Vector2(451, 166)
+scale = Vector2(1.21, 1.21)
+texture = ExtResource("2_snt6q")
+centered = false
+offset = Vector2(-1000, -400)
+
+[node name="MainHero" parent="Sprite2D" unique_id=676048312 instance=ExtResource("3_aligp")]
+position = Vector2(-14.876022, -2.4793367)
+scale = Vector2(0.82644624, 0.82644624)
+
+[node name="StaticBody2D" parent="Sprite2D" unique_id=476889359 instance=ExtResource("4_snt6q")]
+position = Vector2(-1002.4792, -185.12396)
+scale = Vector2(0.99702644, 0.9046417)
+
+[node name="pers4" parent="Sprite2D" unique_id=1495747170 instance=ExtResource("5_2s7vj")]
+position = Vector2(-137.19008, -73.55371)
+scale = Vector2(0.82644624, 0.82644624)
+
+[node name="pers6" parent="Sprite2D" unique_id=497100185 instance=ExtResource("6_fi62h")]
+position = Vector2(262.8099, -100.82645)
+
+[node name="CutsceneUI" type="CanvasLayer" parent="." unique_id=1126574728]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CutsceneUI" unique_id=594091691]
+offset_left = -193.0
+offset_top = -206.0
+offset_right = 1841.0
+offset_bottom = 784.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CutsceneUI" unique_id=1968533610]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -65.0
+offset_right = 366.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_snt6q")
+theme_override_font_sizes/font_size = 65
+text = "Брайян підходить до вагону"

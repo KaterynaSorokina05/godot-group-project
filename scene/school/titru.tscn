@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b7uge3shyr8rk"]
+
+[ext_resource type="VideoStream" uid="uid://b0ws65i3kuq2p" path="res://scene/school/titru.ogv" id="1_o3pci"]
+
+[node name="Titru" type="Control" unique_id=162980285]
+layout_mode = 3
+anchor_right = 1.064
+anchor_bottom = 1.1040001
+offset_right = -1225.728
+offset_bottom = -653.56805
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1000058267]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -11.0
+offset_right = 1163.0
+offset_bottom = 609.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_o3pci")
+autoplay = true
+expand = true

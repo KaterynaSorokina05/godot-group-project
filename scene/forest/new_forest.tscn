@@ -100,7 +100,6 @@ shape = SubResource("RectangleShape2D_7d17k")
 
 [node name="FootstepsPlayer" type="AudioStreamPlayer" parent="." unique_id=1527119100]
 stream = ExtResource("7_ad73n")
-bus = &"Sound"
 
 [connection signal="body_entered" from="MatthewTrigger" to="." method="_on_matthew_trigger_body_entered"]
 [connection signal="body_entered" from="WagonTrigger" to="." method="_on_wagon_trigger_body_entered"]

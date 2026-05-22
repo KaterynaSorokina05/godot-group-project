@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://daqdwanc6xyf4"]
+
+[ext_resource type="Script" uid="uid://eejhpa7ihxj5" path="res://scene/school/math.gd" id="1_veobo"]
+[ext_resource type="Texture2D" uid="uid://dpbh3rddufm3y" path="res://background/math.png" id="2_tb61o"]
+[ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="3_c8fyf"]
+[ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="4_ofrs0"]
+[ext_resource type="Script" uid="uid://b6ioh431tp3wc" path="res://scene/school/collision_shape_2d.gd" id="5_c8fyf"]
+[ext_resource type="Texture2D" uid="uid://dh16mw4m8xlcs" path="res://scene/school/paperclip.png" id="6_ofrs0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un2p2"]
+size = Vector2(176, 437)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w88sl"]
+size = Vector2(20, 28.534021)
+
+[node name="Math" type="Node2D" unique_id=2145483009]
+script = ExtResource("1_veobo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=198478999]
+position = Vector2(751, 449.00003)
+scale = Vector2(1.0730932, 1.119643)
+texture = ExtResource("2_tb61o")
+centered = false
+offset = Vector2(-1000, -400)
+
+[node name="StaticBody2D" parent="Sprite2D" unique_id=476889359 instance=ExtResource("3_c8fyf")]
+position = Vector2(-458.48767, -526.95374)
+scale = Vector2(0.42220002, 1.5593249)
+
+[node name="MainHero" parent="." unique_id=676048312 instance=ExtResource("4_ofrs0")]
+position = Vector2(593, 401)
+scale = Vector2(0.8, 0.8)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1992785005]
+position = Vector2(838, 924)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=257497610]
+position = Vector2(214, -587)
+shape = SubResource("RectangleShape2D_un2p2")
+script = ExtResource("5_c8fyf")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=2004089664]
+
+[node name="Paperclip" type="Sprite2D" parent="Area2D2" unique_id=2105435566]
+position = Vector2(447.66678, 553.25)
+scale = Vector2(0.07592585, 0.07592585)
+texture = ExtResource("6_ofrs0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=2069474497]
+position = Vector2(449, 384.75986)
+scale = Vector2(1.9785166, 14.351985)
+shape = SubResource("RectangleShape2D_w88sl")
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

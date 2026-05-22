@@ -50,7 +50,7 @@ func _ready():
 	#Transition.change_scene("res://scene/forest/new_forest.tscn")
 	# === КІНЕЦЬ СЦЕНИ ===
 	# Тут ти можеш завантажити наступний день (наприклад, школу)
-	# Transition.change_scene("res://school_first_floor.tscn")
+	Transition.change_scene("res://scene/school/to_school.tscn")
 
 
 # ==========================================

@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://wf87ufe4568v"]
+
+[ext_resource type="Script" uid="uid://3mhhghj7x5x7" path="res://scene/school/second_floor.gd" id="1_lxgac"]
+[ext_resource type="Texture2D" uid="uid://cnwgx6be4af2q" path="res://background/second_platform.png" id="2_nbq1p"]
+[ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="3_6rgo3"]
+[ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="4_em5cm"]
+[ext_resource type="FontFile" uid="uid://d3pl5oepwped6" path="res://elements/dialogue/AmaticSC-Bold.ttf" id="5_nbq1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rgo3"]
+size = Vector2(294.9933, 558.68854)
+
+[node name="SecondFloor" type="Node2D" unique_id=1413381072]
+script = ExtResource("1_lxgac")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1797037695]
+position = Vector2(632, 386.00003)
+scale = Vector2(1.6537528, 1.653753)
+texture = ExtResource("2_nbq1p")
+centered = false
+offset = Vector2(-1000, -400)
+
+[node name="StaticBody2D" parent="Sprite2D" unique_id=476889359 instance=ExtResource("4_em5cm")]
+z_index = 1
+position = Vector2(-761.9035, -366.43924)
+scale = Vector2(0.73256314, 0.9046417)
+
+[node name="Label" type="Label" parent="Sprite2D" unique_id=378925199]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1575.4818
+offset_top = -564.47363
+offset_right = -1045.4818
+offset_bottom = -481.4736
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5687604, 0.447554)
+theme_override_fonts/font = ExtResource("5_nbq1p")
+theme_override_font_sizes/font_size = 65
+text = "3 поверх"
+
+[node name="MainHero" parent="." unique_id=676048312 instance=ExtResource("3_6rgo3")]
+position = Vector2(972, 199)
+scale = Vector2(1, 1.0000001)
+
+[node name="first" type="Area2D" parent="." unique_id=1627395431]
+position = Vector2(107, 107)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="first" unique_id=1460004649]
+position = Vector2(1103, -15)
+scale = Vector2(1.0800024, 1)
+shape = SubResource("RectangleShape2D_6rgo3")
+
+[node name="second" type="Area2D" parent="." unique_id=440101922]
+position = Vector2(-1550, 125)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="second" unique_id=811533433]
+position = Vector2(1103, -15)
+scale = Vector2(1.0800024, 1)
+shape = SubResource("RectangleShape2D_6rgo3")
+
+[node name="lab" type="Area2D" parent="." unique_id=441250413]
+position = Vector2(-230, 137)
+scale = Vector2(0.6784803, 0.9377727)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab" unique_id=417426550]
+position = Vector2(1103, -15)
+scale = Vector2(1.0800024, 1)
+shape = SubResource("RectangleShape2D_6rgo3")
+
+[connection signal="body_exited" from="first" to="." method="_on_first_body_exited"]
+[connection signal="body_shape_entered" from="first" to="." method="_on_first_body_shape_entered"]
+[connection signal="body_exited" from="second" to="." method="_on_second_body_exited"]
+[connection signal="body_shape_entered" from="second" to="." method="_on_second_body_shape_entered"]
+[connection signal="body_exited" from="lab" to="." method="_on_lab_body_exited"]
+[connection signal="body_shape_entered" from="lab" to="." method="_on_lab_body_shape_entered"]
