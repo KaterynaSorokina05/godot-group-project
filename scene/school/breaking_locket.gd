@@ -5,7 +5,7 @@ var dialogue_started: bool = false
 
 func _ready() -> void:
 	# Тут залишаємо ТІЛЬКИ музику
-	GlobalMusic.play_music("res://scene/forest/F2.wav")
+	GlobalMusic.play_music("res://sountrack/school.wav")
 
 
 # Ця функція у тебе вже створена внизу скрипта (Godot її підключив від синьої зони)
@@ -26,7 +26,7 @@ func _on_talk_body_entered(body: Node2D) -> void:
 
 		await play_line("РОРІ", "Це ж старе закинуте депо на околиці. «Бетонний кокон» — це головний ангар, а «залізна гусениця» — потяг.", $pers2/AnimatedSprite2D, "talk_left", "default_left")
 		
-		await play_line("БРАЙАН", "А число звіра ,скоріше за все вказує на номер складу .666...", $MaimHero/AnimatedSprite2D, "talk_left", "default_left")
+		await play_line("БРАЙАН", "А число звіра ,скоріше за все вказує на номер складу .666...", $MainHero/AnimatedSprite2D, "talk_right", "default_right")
 		
 		# Меттью (вправо, персонаж 5)
 		await play_line("МЕТЬЮ", "Я, до речі, дещо знайшов. І це дуже дивно.", $pers5/AnimatedSprite2D, "talk_right", "default_right")

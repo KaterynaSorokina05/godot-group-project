@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bptlpgf4ng5fp"]
 
-[ext_resource type="Script" path="res://scene/school/third_floor.gd" id="1_deiuw"]
+[ext_resource type="Script" uid="uid://b0cvb4fygq5rr" path="res://scene/school/third_floor.gd" id="1_deiuw"]
 [ext_resource type="Texture2D" uid="uid://cwoehetw04pkx" path="res://background/thirdplatform.png" id="2_2wayd"]
 [ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="3_g0dsc"]
 [ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="4_8ekij"]
-[ext_resource type="Script" path="res://scene/school/collision_shape_2d.gd" id="5_g0dsc"]
+[ext_resource type="Script" uid="uid://b6ioh431tp3wc" path="res://scene/school/collision_shape_2d.gd" id="5_g0dsc"]
 [ext_resource type="PackedScene" uid="uid://jvj7nj6v2h7p" path="res://personages/pers_2.tscn" id="6_ogdbn"]
 [ext_resource type="PackedScene" uid="uid://d01cc1ixp0emh" path="res://personages/pers_4.tscn" id="7_2geld"]
 

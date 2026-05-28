@@ -3,7 +3,7 @@ extends Node2D
 func _ready():
 	DialogueManager.hide_text()
 # 1. ЗАБОРОНЯЄМО ГЕРОЮ ХОДИТИ І ДУМАТИ!
-	GlobalMusic.play_music("res://scene/forest/F2.wav")
+	GlobalMusic.play_music("res://sountrack/school.wav")
 	Global.save_game(scene_file_path)
 	
 	$Sprite2D/MainHero/AnimatedSprite2D.flip_h = false

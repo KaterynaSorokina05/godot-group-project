@@ -5,7 +5,7 @@ var dialogue_started: bool = false
 
 func _ready() -> void:
 	# Тут залишаємо ТІЛЬКИ музику
-	GlobalMusic.play_music("res://scene/forest/F2.wav")
+	GlobalMusic.play_music("res://sountrack/school.wav")
 
 
 # Ця функція у тебе вже створена внизу скрипта (Godot її підключив від синьої зони)
