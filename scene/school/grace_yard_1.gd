@@ -3,7 +3,7 @@ extends Node2D
 func _ready():
 	
 # 1. ЗАБОРОНЯЄМО ГЕРОЮ ХОДИТИ І ДУМАТИ!
-	GlobalMusic.play_music("res://scene/forest/F2.wav")
+	GlobalMusic.play_music("res://sountrack/school.wav")
 	$Sprite2D/MainHero.set_physics_process(false)
 
 	# Маленька пауза перед початком діалогу, щоб гравець встиг роздивитися сцену

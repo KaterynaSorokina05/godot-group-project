@@ -9,7 +9,7 @@ func _ready():
 	await tween_fade_in.finished
 
 	
-	GlobalMusic.play_music("res://scene/forest/F2.wav")
+	GlobalMusic.play_music("res://sountrack/school.wav")
 	$CutsceneUI/ColorRect.modulate.a = 1.0
 	$CutsceneUI/Label.text = "скоро правда буде розкрита... to be continued"
 	$CutsceneUI.visible = true

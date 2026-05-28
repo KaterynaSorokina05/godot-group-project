@@ -5,7 +5,7 @@ var dialogue_started: bool = false
 
 func _ready() -> void:
 	# Тут залишаємо ТІЛЬКИ музику
-	GlobalMusic.play_music("res://scene/forest/F2.wav")
+	GlobalMusic.play_music("res://sountrack/school.wav")
 
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:

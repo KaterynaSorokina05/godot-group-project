@@ -4,7 +4,7 @@ var dialogue_started: bool = false
 
 func _ready() -> void:
     # Тут залишаємо ТІЛЬКИ музику
-    GlobalMusic.play_music("res://scene/forest/F2.wav")
+    GlobalMusic.play_music("res://sountrack/school.wav")
     $pers2/AnimatedSprite2D.flip_h = true
     $pers4/AnimatedSprite2D.flip_h = false
 
@@ -27,6 +27,7 @@ func _on_talk_body_entered(body: Node2D) -> void:
 #Лоліта:добре,ми прийдемо 
         # НАШ ДІАЛОГ (перенесений з _ready)
         $pers4/AnimatedSprite2D.flip_h = false
+        $pers2/AnimatedSprite2D.flip_h = false
         await play_line("РОРІ", "Йоу,чувак що з обличчям ?",$pers2/AnimatedSprite2D, "talk_right", "default_right")
         
         await play_line("ЛОЛІТА", "його вдарив Мейсон", $pers4/AnimatedSprite2D, "talk_right", "default_right")

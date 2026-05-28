@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GlobalMusic.play_music("res://scene/forest/F2.wav")
+	GlobalMusic.play_music("res://sountrack/school.wav")
 	$MainHero.set_physics_process(true)
 
 
