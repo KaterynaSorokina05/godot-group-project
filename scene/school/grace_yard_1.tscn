@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://0oqe5dm4f6ga"]
+[gd_scene format=3 uid="uid://duix51gr2t7ix"]
 
-[ext_resource type="Script" uid="uid://dvp3yu2ssv3fx" path="res://scene/school/grace_yard_1.gd" id="1_ts07y"]
+[ext_resource type="Script" path="res://scene/school/grace_yard_1.gd" id="1_ts07y"]
 [ext_resource type="Texture2D" uid="uid://cygg587133jyd" path="res://background/yard.png" id="2_sjgl1"]
 [ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="3_guiqt"]
 [ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="4_msf48"]
@@ -20,11 +20,11 @@ centered = false
 offset = Vector2(-1000, -400)
 
 [node name="MainHero" parent="Sprite2D" unique_id=676048312 instance=ExtResource("3_guiqt")]
-position = Vector2(-414.87604, -8.26446)
+position = Vector2(-414.876, 16.52893)
 scale = Vector2(0.82644624, 0.82644624)
 
 [node name="StaticBody2D" parent="Sprite2D" unique_id=476889359 instance=ExtResource("4_msf48")]
-position = Vector2(-761.1569, -182.64462)
+position = Vector2(-766.1157, -203.30579)
 scale = Vector2(0.69950575, 0.9046417)
 
 [node name="pers3" parent="Sprite2D" unique_id=809474841 instance=ExtResource("5_k1bsc")]

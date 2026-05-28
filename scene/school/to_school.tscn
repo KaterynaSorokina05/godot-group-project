@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://by51ldwm8as7n"]
+[gd_scene format=3 uid="uid://dyxo308au7m5"]
 
-[ext_resource type="Script" uid="uid://b21n66til8psi" path="res://scene/school/to_school.gd" id="1_y7eng"]
+[ext_resource type="Script" path="res://scene/school/to_school.gd" id="1_y7eng"]
 [ext_resource type="Texture2D" uid="uid://bbssl66utt7mm" path="res://background/firstplatform.png" id="2_snt6q"]
 [ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="3_aligp"]
 [ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="4_snt6q"]
 [ext_resource type="PackedScene" uid="uid://d01cc1ixp0emh" path="res://personages/pers_4.tscn" id="5_2s7vj"]
-[ext_resource type="PackedScene" uid="uid://bv83pkyhom8o" path="res://personages/pers_6.tscn" id="6_fi62h"]
+[ext_resource type="PackedScene" path="res://personages/pers_6.tscn" id="6_fi62h"]
 [ext_resource type="FontFile" uid="uid://d3pl5oepwped6" path="res://elements/dialogue/AmaticSC-Bold.ttf" id="7_snt6q"]
 
 [node name="ToSchool" type="Node2D" unique_id=465821235]
@@ -23,7 +23,7 @@ position = Vector2(-14.876022, -2.4793367)
 scale = Vector2(0.82644624, 0.82644624)
 
 [node name="StaticBody2D" parent="Sprite2D" unique_id=476889359 instance=ExtResource("4_snt6q")]
-position = Vector2(-1002.4792, -185.12396)
+position = Vector2(-1002.4792, -220.66115)
 scale = Vector2(0.99702644, 0.9046417)
 
 [node name="pers4" parent="Sprite2D" unique_id=1495747170 instance=ExtResource("5_2s7vj")]

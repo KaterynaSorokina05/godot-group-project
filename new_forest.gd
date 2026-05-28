@@ -11,7 +11,7 @@ func _ready():
 	$CutsceneUI/ColorRect.modulate.a = 1.0
 	$CutsceneUI/Label.text = "Використовуйте кнопки A та D для руху"
 	$CutsceneUI.visible = true
-	
+	$MainHero/AnimatedSprite2D.play("default_left")
 	# Чекаємо 3 секунди
 	await get_tree().create_timer(3.0, false).timeout
 	$CutsceneUI/Label.text = ""
@@ -27,14 +27,17 @@ func _ready():
 
 # === СИГНАЛ 1: БРАЯНТ ПІДІЙШОВ ДО МЕТЬЮ ===
 func _on_matthew_trigger_body_entered(body: Node2D) -> void:
-	# Перевіряємо, чи це саме головний герой зайшов у зону
 	if body.name == "MainHero":
-		# Вимикаємо цю зону, щоб Метью не повторював фразу нескінченно
 		$MatthewTrigger.set_deferred("monitoring", false)
 		
-		# Зупиняємо гравця на час розмови і ставимо анімацію спокою
+		
+		
+		$MainHero.velocity = Vector2.ZERO
 		$MainHero.set_physics_process(false)
-		$MainHero/AnimatedSprite2D.play("default_right")
+		
+		if $MainHero.scale.x > 0:
+			$MainHero.scale.x = -$MainHero.scale.x
+		$MainHero/AnimatedSprite2D.play("default_left")
 		
 		# Запускаємо діалог
 		DialogueManager.show_text("МЕТЬЮ", "Швидше давай, не майся дурницями.")
@@ -43,10 +46,14 @@ func _on_matthew_trigger_body_entered(body: Node2D) -> void:
 		await DialogueManager.next_clicked
 		DialogueManager.hide_text()
 		
+		
+		if $MainHero.scale.x < 0:
+			$MainHero.scale.x = abs($MainHero.scale.x)
+		
 		# Дозволяємо Браянту йти далі!
 		$MainHero.set_physics_process(true)
-
-
+		
+		
 # === СИГНАЛ 2: БРАЯНТ ПІДІЙШОВ ДО ВАГОНУ ===
 func _on_wagon_trigger_body_entered(body: Node2D) -> void:
 	if body.name == "MainHero":

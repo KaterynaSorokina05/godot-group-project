@@ -125,7 +125,8 @@ animations = [{
 script = ExtResource("1_syrhl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=161834406]
-position = Vector2(905, 296)
+position = Vector2(905, 297)
+scale = Vector2(1, 1.0033784)
 texture = ExtResource("2_c0iry")
 
 [node name="MouthAnimationpers2" type="AnimatedSprite2D" parent="." unique_id=1847749771]

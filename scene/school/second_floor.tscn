@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://wf87ufe4568v"]
+[gd_scene format=3 uid="uid://dsyp4homewwsj"]
 
-[ext_resource type="Script" uid="uid://3mhhghj7x5x7" path="res://scene/school/second_floor.gd" id="1_lxgac"]
+[ext_resource type="Script" path="res://scene/school/second_floor.gd" id="1_lxgac"]
 [ext_resource type="Texture2D" uid="uid://cnwgx6be4af2q" path="res://background/second_platform.png" id="2_nbq1p"]
 [ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="3_6rgo3"]
 [ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="4_em5cm"]
@@ -42,7 +42,7 @@ theme_override_font_sizes/font_size = 65
 text = "3 поверх"
 
 [node name="MainHero" parent="." unique_id=676048312 instance=ExtResource("3_6rgo3")]
-position = Vector2(972, 199)
+position = Vector2(972, 206)
 scale = Vector2(1, 1.0000001)
 
 [node name="first" type="Area2D" parent="." unique_id=1627395431]

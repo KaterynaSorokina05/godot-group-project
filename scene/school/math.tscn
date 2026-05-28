@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://daqdwanc6xyf4"]
+[gd_scene format=3 uid="uid://dtlyllcyohoay"]
 
-[ext_resource type="Script" uid="uid://eejhpa7ihxj5" path="res://scene/school/math.gd" id="1_veobo"]
+[ext_resource type="Script" path="res://scene/school/math.gd" id="1_veobo"]
 [ext_resource type="Texture2D" uid="uid://dpbh3rddufm3y" path="res://background/math.png" id="2_tb61o"]
 [ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="3_c8fyf"]
 [ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="4_ofrs0"]
-[ext_resource type="Script" uid="uid://b6ioh431tp3wc" path="res://scene/school/collision_shape_2d.gd" id="5_c8fyf"]
+[ext_resource type="Script" path="res://scene/school/collision_shape_2d.gd" id="5_c8fyf"]
 [ext_resource type="Texture2D" uid="uid://dh16mw4m8xlcs" path="res://scene/school/paperclip.png" id="6_ofrs0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_un2p2"]
@@ -28,7 +28,7 @@ position = Vector2(-458.48767, -526.95374)
 scale = Vector2(0.42220002, 1.5593249)
 
 [node name="MainHero" parent="." unique_id=676048312 instance=ExtResource("4_ofrs0")]
-position = Vector2(593, 401)
+position = Vector2(592, 418)
 scale = Vector2(0.8, 0.8)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1992785005]

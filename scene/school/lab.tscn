@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://bfuvapbeql43n"]
+[gd_scene format=3 uid="uid://bn7dos2icdnws"]
 
-[ext_resource type="Script" uid="uid://dx5uqmo632xbs" path="res://scene/school/lab.gd" id="1_qe8mk"]
-[ext_resource type="Texture2D" uid="uid://bdbhp4xlrl2dx" path="res://background/lab.png" id="2_qe8mk"]
+[ext_resource type="Script" path="res://scene/school/lab.gd" id="1_qe8mk"]
+[ext_resource type="Texture2D" uid="uid://bdbhp4xlrl2dx" path="res://background/LAB.png" id="2_qe8mk"]
 [ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="2_yrwfp"]
 [ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="3_qe8mk"]
-[ext_resource type="Script" uid="uid://b6ioh431tp3wc" path="res://scene/school/collision_shape_2d.gd" id="3_yrwfp"]
+[ext_resource type="Script" path="res://scene/school/collision_shape_2d.gd" id="3_yrwfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3a3ij"]
 size = Vector2(270, 550.5)
@@ -24,7 +24,7 @@ position = Vector2(-670.2223, -373.48038)
 scale = Vector2(0.60857797, 1.5593249)
 
 [node name="MainHero" parent="Sprite2D" unique_id=676048312 instance=ExtResource("3_qe8mk")]
-position = Vector2(-454.26886, 109.99213)
+position = Vector2(-484.93683, 38.5794)
 scale = Vector2(0.9583731, 1.2312543)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1256274828]

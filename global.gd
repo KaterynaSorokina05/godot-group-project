@@ -7,18 +7,31 @@ var save_path = "user://rust_depo_save.cfg"
 
 # Функция, которая ЗАПИСЫВАЕТ сохранение
 func save_game(current_scene: String):
+	print("--- ПОПЫТКА СОХРАНЕНИЯ ---")
+	print("Путь сцены, который передали: ", current_scene)
+	
+	if current_scene == "":
+		print("ВНИМАНИЕ: Путь пустой! Сохранять нечего.")
+		return
+
 	var config = ConfigFile.new()
-	# Записываем в секцию "Progress" параметр "last_scene"
 	config.set_value("Progress", "last_scene", current_scene)
-	config.save(save_path)
+	
+	var error = config.save(save_path)
+	if error == OK:
+		print("УСПЕХ: Файл физически записан на диск!")
+	else:
+		print("ОШИБКА: Не удалось записать файл. Код ошибки: ", error)
 
 # Функция, которая ЧИТАЕТ сохранение
 func load_game() -> String:
+	print("--- ПОПЫТКА ЗАГРУЗКИ ---")
 	var config = ConfigFile.new()
-	# Если файл успешно загрузился:
-	if config.load(save_path) == OK:
-		# Возвращаем путь к сцене
-		return config.get_value("Progress", "last_scene", "")
 	
-	# Если файла нет (игрок зашел первый раз)
+	if config.load(save_path) == OK:
+		var loaded_scene = config.get_value("Progress", "last_scene", "")
+		print("УСПЕХ: Прочитали файл с диска. Найдена сцена: ", loaded_scene)
+		return loaded_scene
+		
+	print("ИНФО: Файла сохранения на диске еще нет.")
 	return ""

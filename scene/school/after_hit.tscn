@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://buonbqvd3n12u"]
+[gd_scene format=3 uid="uid://bljpgctvggfdr"]
 
 [ext_resource type="Script" uid="uid://bf6eyggaioiow" path="res://scene/school/after_hit.gd" id="1_wocj5"]
 [ext_resource type="Texture2D" uid="uid://bbssl66utt7mm" path="res://background/firstplatform.png" id="2_3c8s4"]
@@ -26,11 +26,11 @@ centered = false
 offset = Vector2(-1000, -400)
 
 [node name="MainHero" parent="Sprite2D" unique_id=676048312 instance=ExtResource("4_c03y8")]
-position = Vector2(-14.876022, -9.917353)
+position = Vector2(-0.8264618, 8.264473)
 scale = Vector2(0.82644624, 0.82644624)
 
 [node name="StaticBody2D" parent="Sprite2D" unique_id=476889359 instance=ExtResource("5_0we1e")]
-position = Vector2(-1002.4792, -185.12396)
+position = Vector2(-1002.4792, -211.57025)
 scale = Vector2(0.99702644, 0.9046417)
 
 [node name="pers4" parent="Sprite2D" unique_id=1495747170 instance=ExtResource("6_s2hrr")]

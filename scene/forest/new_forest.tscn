@@ -49,10 +49,11 @@ scale = Vector2(1.0707182, 1.17)
 texture = ExtResource("1_t4337")
 
 [node name="MainHero" parent="." unique_id=676048312 instance=ExtResource("2_ij120")]
-position = Vector2(782, 371)
+position = Vector2(771, 390)
 
 [node name="StaticBody2D" parent="." unique_id=476889359 instance=ExtResource("4_7d17k")]
-position = Vector2(428, 161)
+position = Vector2(412.00003, 260)
+scale = Vector2(0.75, 0.75)
 
 [node name="CutsceneUI" type="CanvasLayer" parent="." unique_id=700207359]
 visible = false

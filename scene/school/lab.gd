@@ -14,10 +14,20 @@ func _on_talk_body_entered(body: Node2D) -> void:
 	if body.name == "MainHero" and not dialogue_started:
 		dialogue_started = true # Блокуємо повторний старт
 		
-		# Забороняємо герою ходити, поки вони говорять
+		# === ЖОРСТКА ЗУПИНКА ГЕРОЯ ===
+		# 1. Скидаємо швидкість в 0, щоб він не котився по інерції
+		$Sprite2D/MainHero.velocity = Vector2.ZERO
+		
+		# 2. Примусово вмикаємо анімацію спокою, щоб він не біг на місці
+		if $Sprite2D/MainHero/AnimatedSprite2D.flip_h:
+			$Sprite2D/MainHero/AnimatedSprite2D.play("default_left")
+		else:
+			$Sprite2D/MainHero/AnimatedSprite2D.play("default_right")
+		
+		# 3. І тільки тепер повністю вимикаємо фізичний процес
 		$Sprite2D/MainHero.set_physics_process(false)
 		
-		# НАШ ДІАЛОГ (перенесений з _ready)
+		# НАШ ДІАЛОГ
 		await play_line("МЕТЬЮ", "Привіт! Я тут намагаюсь знайти якусь інформацію про...", null, "", "")
 		
 		await play_line("БРАЙАН", "Зустрічаємося біля шафки Ноа.", $Sprite2D/MainHero/AnimatedSprite2D, "talk_right", "default_right")

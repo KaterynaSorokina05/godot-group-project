@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bth8ap2536dti"]
+[gd_scene format=3 uid="uid://bclko2d1olc7p"]
 
-[ext_resource type="Script" uid="uid://hrw4cjef4t5m" path="res://scene/school/first_floor.gd" id="1_kc3ne"]
+[ext_resource type="Script" path="res://scene/school/first_floor.gd" id="1_kc3ne"]
 [ext_resource type="Texture2D" uid="uid://dkdc6bhbjobxb" path="res://background/firstplatform(2).png" id="2_kc3ne"]
 [ext_resource type="PackedScene" uid="uid://dfat6mf81taol" path="res://main_hero/main_hero.tscn" id="3_87scm"]
 [ext_resource type="PackedScene" uid="uid://28p8y78ymvdv" path="res://elements/wall/wall.tscn" id="4_bxig8"]
@@ -21,7 +21,7 @@ offset = Vector2(-1000, -400)
 
 [node name="StaticBody2D" parent="Sprite2D" unique_id=476889359 instance=ExtResource("4_bxig8")]
 z_index = 1
-position = Vector2(-834.9049, -348.1082)
+position = Vector2(-834.21124, -363.3639)
 scale = Vector2(0.73256314, 0.9046417)
 
 [node name="stairs" type="Area2D" parent="." unique_id=1791759190]
@@ -41,7 +41,7 @@ scale = Vector2(1.0800024, 1)
 shape = SubResource("RectangleShape2D_1vpo2")
 
 [node name="MainHero" parent="." unique_id=676048312 instance=ExtResource("3_87scm")]
-position = Vector2(179, -18)
+position = Vector2(183, -46)
 scale = Vector2(1, 1.0000001)
 
 [node name="Label" type="Label" parent="." unique_id=1518086200]

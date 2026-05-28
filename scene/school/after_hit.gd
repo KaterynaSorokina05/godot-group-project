@@ -1,9 +1,19 @@
 extends Node2D
 
 func _ready():
+	# БЕЗУПРЕЧНЫЙ СПОСОБ: Говорим движку самому найти камеру в этой сцене
+	var camera = find_child("Camera2D", true, false)
+	
+	# Проверяем, нашлась ли камера, чтобы игра точно не вылетала
+	if camera != null:
+		camera.limit_left = -710   # Ограничение слева
+		camera.limit_right = 1120  # Ограничение справа
+		camera.limit_top = -400    # Ограничение сверху
+		camera.limit_bottom = 400  # Ограничение снизу
 	
 # 1. ЗАБОРОНЯЄМО ГЕРОЮ ХОДИТИ І ДУМАТИ!
 	GlobalMusic.play_music("res://scene/forest/F2.wav")
+	Global.save_game(scene_file_path)
 	
 	$Sprite2D/MainHero/AnimatedSprite2D.flip_h = false
 	$Sprite2D/pers4/AnimatedSprite2D.flip_h = true

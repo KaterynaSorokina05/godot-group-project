@@ -7,8 +7,8 @@
 script = ExtResource("1_yhmq4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=854280004]
-position = Vector2(575.49994, 293.44998)
-scale = Vector2(0.6838978, 0.6362567)
+position = Vector2(575.49994, 294)
+scale = Vector2(0.6838978, 0.6374332)
 texture = ExtResource("1_qdnuh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1618209882]
